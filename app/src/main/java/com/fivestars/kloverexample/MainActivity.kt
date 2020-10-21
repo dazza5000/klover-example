@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import com.clover.sdk.util.CloverAccount
 import com.clover.sdk.v1.Intents
+import com.clover.sdk.v1.Intents.EXTRA_CLOVER_ORDER_ID
 import com.clover.sdk.v3.order.OrderConnector
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.pay_button)?.setOnClickListener {
             Intent(Intents.ACTION_CLOVER_PAY).run {
+                this.putExtra(EXTRA_CLOVER_ORDER_ID, "CCPK8M3N9RXPR")
                 startActivity(this)
             }
         }
